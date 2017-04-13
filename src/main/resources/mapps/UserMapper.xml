@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.mobilephone.shop.dao.UserDao">
+	
+	<resultMap type="cn.mobilephone.shop.enity.User" id="userResult">
+		<result property="userId" column="user_id"/>
+		<result property="userName" column="user_name"/>
+		<result property="userPwd" column="user_pwd"/>
+		<result property="userRealName" column="user_realName"/>
+		<result property="userSex" column="user_sex"/>
+		<result property="userBirth"  column="user_birth"/>
+		<result property="userPhoneNum" column="user_phoneNum"/>
+	</resultMap>
+	<parameterMap type="cn.mobilephone.shop.enity.User" id="userParameter">
+		<parameter property="userId" resultMap="userResult"/>
+		<parameter property="userName" resultMap="userResult"/>
+		<parameter property="userPwd" resultMap="userResult"/>
+		<parameter property="userRealName" resultMap="userResult"/>
+		<parameter property="userSex" resultMap="userResult"/>
+		<parameter property="userBirth" resultMap="userResult"/>
+		<parameter property="userPhoneNum" resultMap="userResult"/>
+	</parameterMap>
+	
+	<select id="queryUserByName" parameterType="String"
+	 resultMap="userResult">
+		select user_id,user_name,user_pwd,user_realName,
+		user_sex,user_birth,user_phoneNum 
+		from shop_user 
+		where user_name=#{name}
+	</select>
+	
+	<insert id="addUser" useGeneratedKeys="true" keyProperty="userId" parameterMap="userParameter">
+ 		<selectKey resultType="int" order="BEFORE" keyProperty="userId">    
+     		select user_seq.nextval from dual   
+		</selectKey>
+		INSERT INTO shop_user (user_id,user_name,user_pwd,
+		user_realName,user_sex,user_birth,user_phoneNum) 
+		values(#{userId},#{userName},#{userPwd},#{userRealName},
+		#{userSex},To_date(#{userBirth},'yyyy-MM-dd'),#{userPhoneNum})
+	</insert>
+	
+	<update id="updateUser" parameterMap="userParameter">
+		update shop_user set
+		<if test="userPwd">
+		user_pwd=#{userPwd},
+		</if>
+		<if test="userRealName">
+		user_realname=#{userRealName},
+		</if>
+		<if test="userSex">
+		user_sex=#{userSex},		
+		</if>
+		<if test="userBirth">
+		user_birth=to_date(#{userBirth},'yyyy-MM-dd'),
+		</if>
+		<if test="userPhoneNum">
+		user_phonenum=#{userPhoneNum},
+		</if>
+		user_name=#{userName} 
+		where user_id=#{userId}
+	</update>
+
+</mapper>

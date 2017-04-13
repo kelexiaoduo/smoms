@@ -1,0 +1,374 @@
+@CHARSET "UTF-8";
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+  overflow-y: auto;
+  overflow: auto;
+  font-size: 10px;
+}
+
+body {
+  position: relative;
+  overflow: scroll;
+  overflow-x: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+}
+
+
+.header {
+  height: 100px;
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.header h1 {
+  margin-top: 14px;
+  padding: 0;
+  font-size: 31px;
+  margin-bottom: 8.5px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  margin: 0.67em 0;
+  box-sizing: border-box;
+}
+
+.header h1 i {
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  background-image: url("../images/adminLogin/words-icon.png");
+  vertical-align: middle;
+  margin-left: 20px;
+  margin-top:0px;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.header h1 img {
+  width: 237px;
+  vertical-align: middle;
+  border: 0;
+}
+
+.login {
+  background-image: url("./images/adminLogin/login_bg.jpg");
+  height: 475px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.login {
+  background-image: url("./images/adminLogin/login_bg.jpg");
+  height: 475px;
+}
+
+.login .container .span {
+  width: 50%;
+  float: left;
+  text-align: center;
+  height: 475px;
+}
+
+.login .container .span.span-l {
+  text-align: center;
+  line-height: 475px;
+}
+
+.login .container .span.span-r .form {
+  width: 346px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 85px 25px 0 auto;
+  border-top: 4px solid #2145F1;
+}
+
+.login .container .span.span-r .form .mt {
+  position: relative;
+}
+
+.login .container .span.span-r .form .mt h3 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: #666;
+  font-size: 21px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.login .container .span.span-r .form .mc {
+  margin-top: 20px;
+}
+
+.login .container .span.span-r .form .mc .input-group {
+  padding: 10px 0 10px 0;
+}
+
+.login .container .span.span-r .form .mc .input-group .input-group-addon {
+  background-color: #F3F3F3;
+  color: #D3D3D3;
+  font-size: 18px;
+  width: 40px;
+}
+
+.login .container .span.span-r .form .mc .extra-group {
+    text-align: left;
+}
+
+.login .container .span.span-r .form .mc .input-group .form-control {
+    width: 266px;
+    height: 40px;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+  display: table-cell;
+}
+
+.input-group .form-control {
+    display: table-cell;
+}
+
+.input-group-addon,
+.input-group-btn {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.input-group-addon {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1;
+  color: #888888;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0;
+}
+
+.input-group-addon:first-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right: 0;
+}
+
+.input-group .form-control:last-child{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-user:before {
+    content: "\f007";
+}
+
+.fa-lock:before {
+    content: "\f023";
+}
+
+input{
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    line-height: normal;
+    font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	outline: none;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 33px;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #888888;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.input-group .form-control {
+    display: table-cell;
+}
+
+.form-horizontal .checkbox {
+    min-height: 24px;
+}
+
+.checkbox {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ .form-horizontal .checkbox{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 7px;
+}
+
+.login .container .span.span-r .form .mc .extra-group .checkbox label {
+    float: left;
+    width: 100px;
+    text-align: left;
+    padding-top: 0px;
+}
+
+.checkbox label {
+    min-height: 17px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.form-horizontal label {
+    float: left;
+    width: 100px;
+    text-align: right;
+    padding-top: 10px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login .container .span.span-r .form .mc .extra-group .checkbox label input[type="checkbox"] {
+    margin-top: 1px;
+}
+
+.checkbox input[type="checkbox"] {
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 4px;
+}
+
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px;
+    line-height: normal;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.login .container .span.span-r .form .mc .extra-group .forget-pw-safe {
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.login .container .span.span-r .form .mc .input-group .login-btn .btn-img {
+    height: 32px;
+    width: 304px;
+}
+
+.login-btn .btn-img {
+    border: 1px solid #2145F1;
+    display: block;
+    width: 100%;
+    background: #2145F1;
+    height: 30px;
+    line-height: 26px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 0;
+    padding: 0;
+}
+
+.btn:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+
+
+

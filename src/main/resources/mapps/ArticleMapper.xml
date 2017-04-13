@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ 
+<mapper namespace="cn.mobilephone.shop.dao.ArticleDao">
+	<resultMap type="cn.mobilephone.shop.enity.Article"
+	 id="ArticleResult">
+		<result property="articleId" column="article_id"/> 
+		<result property="articleTitle" column="article_title"/>
+		<result property="articleContent" column="article_content"/>
+		<result property="publisher" column="publisher"/>
+		<result property="modifyTime" column="modify_time"/>
+	</resultMap>
+	<parameterMap type="cn.mobilephone.shop.enity.Article"
+	 id="ArticleParameter">
+		 <parameter property="articleId" resultMap="ArticleResult"/>
+		 <parameter property="articleTitle" resultMap="ArticleResult"/>
+		 <parameter property="articleContent" resultMap="ArticleResult"/>
+		 <parameter property="publisher" resultMap="ArticleResult"/>
+		 <parameter property="modifyTime" resultMap="ArticleResult"/>
+	</parameterMap>
+
+	<insert id="publishArticle" parameterType="cn.mobilephone.shop.enity.Article">
+		insert into article 
+ 		(article_id,article_title,article_content,publisher,modify_time) 
+ 		values(article_seq.nextval,#{articleTitle},#{articleContent},#{publisher},
+ 		sysdate)
+ 	</insert>
+ 	<select id="findArticleByPublisher" parameterType="String"
+ 	 resultMap="ArticleResult">
+ 		select article_id,article_title,article_content,publisher,modify_time 
+ 		from article where publisher = #{publisher}
+ 	</select>
+ 	<select id="findArticleByTitle" parameterType="String" 
+ 	resultMap="ArticleResult">
+ 		select article_id,article_title,article_content,publisher,modify_time 
+ 		from article where article_title like concat(concat('%',#{title}),'%') 
+ 	</select>
+ 	<delete id="deleteArticleByArticleId">
+ 		delete from article where article_id = #{articleId}
+ 	</delete>
+ 	<update id="updateArticle" parameterMap="ArticleParameter">
+ 		update article set 
+ 		<if test="articleTitle != null">
+ 			article_title = #{articleTitle}, 
+ 		</if>
+ 		<if test="articleContent != null">
+ 			article_content = #{articleContent}, 
+ 		</if>
+ 		<if test="publisher != null">
+ 			publisher = #{publisher},
+ 		</if>
+ 			modify_time = sysdate where article_id=#{articleId}
+ 	</update>
+</mapper>
+
